@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#702 Jumping Flea - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:58<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="18afee1f17cf6de32309e4d01f5d3e14FUNTFcc11hIrJ+66KX+WSYvBth5s6FkNBMVQZQ9SfPPxNikFWdCxPwRRaPi1JizmY3pd4h+f84HoesoJ"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=701" class="tooltip"><span class="tooltiptext_left">Go to problem 701 (Unsolved):<br>&quot;Random connected area&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=703" class="tooltip"><span class="tooltiptext_right">Go to problem 703 (Unsolved):<br>&quot;Circular Logic II&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Jumping Flea</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=702"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="27023a826dfe44f0b345c4e403a9a8e4qg7EOGAWWJ/7jVcpAdqycRyWA+Q/yEOhg8/KY8e1IQjeU8GsDZWT/e12B96swBh9pb60VCEB/B/3P3383FNr2ZUg"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=702"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=702""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Saturday, 15th February 2020, 07:00 pm; Solved by 142;<br>Difficulty rating: 95%</span></div><div id="problem_info"><h3>Problem 702</h3></div>
+<div class="problem_content" role="problem">
+<p>A regular hexagon table of side length $N$ is divided into equilateral triangles of side length $1$. The picture below is an illustration of the case $N = 3$.</p>
+
+<div class="center">
+<img src="project/images/p702_jumping_flea.png" alt="hexagonal table" /></div>
+
+<p>An flea of negligible size is jumping on this table. The flea starts at the centre of the table. Thereafter, at each step, it chooses one of the six corners of the table, and jumps to the mid-point between its current position and the chosen corner.</p>
+
+<p>For every triangle $T$, we denote by $J(T)$ the minimum number of jumps required for the flea to reach the interior of $T$. Landing on an edge or vertex of $T$ is not sufficient.</p>
+
+<p>For example, $J(T) = 3$ for the triangle marked with a star in the picture: by jumping from the centre half way towards F, then towards C, then towards E.</p>
+
+<p>Let $S(N)$ be the sum of $J(T)$ for all the upper-pointing triangles $T$ in the upper half of the table. For the case $N = 3$, these are the triangles painted black in the above picture.</p>
+
+<p>You are given that $S(3) = 42$, $S(5) = 126$, $S(123) = 167178$, and $S(12345) = 3185041956$.</p>
+
+<p>Find $S(123456789)$.</p>
+
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=702">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_702" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="1f9954b85e63c123b5722c10f26e30f7kAIpHCE+cvhSUOfLBJmPZjYD0bJ7mzvkt6r1YTQUPJNfFNX9P7fa9+veK9Sd3ALlNC0aifbWGs+/0DeSIx4Rh8xf9OYF"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

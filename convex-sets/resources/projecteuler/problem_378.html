@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#378 Triangle Triples - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:09<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="ff8bfde0bba0568eb6b4a17a8a62a7eaQ+roeZIj3QKjsn8mIz2B/05rkEwUVnjlGEAMPYLwgtKk76u+u59haY/+y1R/SaKfSYVm0BV5/tu+zGBq"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=377" class="tooltip"><span class="tooltiptext_left">Go to problem 377 (Unsolved):<br>&quot;Sum of digits - experience #13&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=379" class="tooltip"><span class="tooltiptext_right">Go to problem 379 (Unsolved):<br>&quot;Least common multiple count&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Triangle Triples</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=378"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="7f56a28fce6f321bd17c1cb168d18a77emzGgQPMbo3fZO9K548K4OYZR3DMjljxshL4fgMG0QYmXwiFe/6JA6wdmbYLVVW7C4AF/LjNHf/zFzixhSNC6527"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=378"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=378""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Sunday, 1st April 2012, 07:00 am; Solved by 824;<br>Difficulty rating: 35%</span></div><div id="problem_info"><h3>Problem 378</h3></div>
+<div class="problem_content" role="problem">
+<p>Let $T(n)$ be the n<sup>th</sup> triangle number, so $T(n) = \dfrac{n(n + 1)}{2}$.</p>
+
+<p>Let $dT(n)$ be the number of divisors of $T(n)$.<br />
+E.g.: $T(7) = 28$ and $dT(7) = 6$.</p>
+
+<p>Let $Tr(n)$ be the number of triples $(i, j, k)$ such that $1 \le i \lt j \lt k \le n$ and $dT(i) \gt dT(j) \gt dT(k)$.<br />
+$Tr(20) = 14$, $Tr(100) = 5772$, and $Tr(1000) = 11174776$.</p>
+
+<p>Find $Tr(60 000 000)$. <br />
+Give the last 18 digits of your answer.</p>
+
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=378">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_378" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="a6cfa685df17bc1c8bab6bd3ea00b841UPbHALcpBeGwPl+yHHuFH3pfrJJwLKrN+IoqtQiC1MUua9P8JS/lSb4s/NbXjv0uWi1IJi+s2Rv2I5lt6/7Exw4MA57F"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

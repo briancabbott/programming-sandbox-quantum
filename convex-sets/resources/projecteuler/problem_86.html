@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#86 Cuboid route - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:00<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="03950eb18d1e41c693c7fee4d1c748b4HP6HFSOLnzG/Nm2APipOcD0Mt6eQMa2lQK/qHXJ1V+q8EeaiXFkguVoyA+yQ96uFzA2HdPQKn78VUaek"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=85" class="tooltip"><span class="tooltiptext_left">Go to problem 85 (Unsolved):<br>&quot;Counting rectangles&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=87" class="tooltip"><span class="tooltiptext_right">Go to problem 87 (Unsolved):<br>&quot;Prime power triples&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Cuboid route</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=86"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="bb8dc93858040e48e28a3725af53b820ne5818XjEPwJFQIAiF0Jl81s4ydPt28e1TGBHDK/2Y7l/8RTYwLU10JU/z3P1SsrMjs9BsyNO+iyj6G2HSvObJw="></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=86"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Friday, 7th January 2005, 06:00 pm; Solved by 12800;<br>Difficulty rating: 35%</span></div><div id="problem_info"><h3>Problem 86</h3></div>
+<div class="problem_content" role="problem">
+<p>A spider, S, sits in one corner of a cuboid room, measuring 6 by 5 by 3, and a fly, F, sits in the opposite corner. By travelling on the surfaces of the room the shortest "straight line" distance from S to F is 10 and the path is shown on the diagram.</p>
+<div class="center">
+<img src="project/images/p086.png" class="dark_img" alt="" /><br /></div>
+<p>However, there are up to three "shortest" path candidates for any given cuboid and the shortest route doesn't always have integer length.</p>
+<p>It can be shown that there are exactly 2060 distinct cuboids, ignoring rotations, with integer dimensions, up to a maximum size of M by M by M, for which the shortest route has integer length when M = 100. This is the least value of M for which the number of solutions first exceeds two thousand; the number of solutions when M = 99 is 1975.</p>
+<p>Find the least value of M such that the number of solutions first exceeds one million.</p>
+
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=86">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_86" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="7cd86be05c1764d3c42fa1c8b218c6a2F1WtE1SJ44gXkKwCfMSYrIL/9/g72B88n64A/fpnY2hAXUXA6rHoHO9wO98uBxlfGDcTWGGG8UlY84j87fjfNqzxPjQ="></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

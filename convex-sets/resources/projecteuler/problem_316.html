@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#316 Numbers in decimal expansions - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:03<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="65ce7ffbdd1b7ac4dc1b7bf4d7209b00Q6yCByA1st2L9R+JZlfQK2eLAV5CjuZUn+3Cfm46SPPs2idqbAgqDGT1UTqNAZ5IpCtj3iFEM+s0Hp9v"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=315" class="tooltip"><span class="tooltiptext_left">Go to problem 315 (Unsolved):<br>&quot;Digital root clocks&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=317" class="tooltip"><span class="tooltiptext_right">Go to problem 317 (Unsolved):<br>&quot;Firecracker&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Numbers in decimal expansions</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=316"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="c39be56a8c24001e5ad035637881b637e/A9M9JgdSYjp1OaxmkMSwCO5BJqfmLoQjLr4kaGu8QIbJ1QFNRN1cmfUjlLoy/0PhlRPUyAJTmJjLERnRbnNHlJ"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=316"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=316""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Saturday, 25th December 2010, 01:00 pm; Solved by 635;<br>Difficulty rating: 55%</span></div><div id="problem_info"><h3>Problem 316</h3></div>
+<div class="problem_content" role="problem">
+<p>Let <var>p</var> = <var>p<sub><font size="-2">1</font></sub> p<sub><font size="-2">2</font></sub> p<sub><font size="-2">3</font></sub></var> ... be an infinite sequence of random digits, selected from {0,1,2,3,4,5,6,7,8,9} with equal probability.<br />
+It can be seen that <var>p</var> corresponds to the real number 0.<var>p<sub><font size="-2">1</font></sub> p<sub><font size="-2">2</font></sub> p<sub><font size="-2">3</font></sub></var> .... <br />
+It can also be seen that choosing a random real number from the interval [0,1) is equivalent to choosing an infinite sequence of random digits selected from {0,1,2,3,4,5,6,7,8,9} with equal probability.</p>
+
+<p>For any positive integer <var>n</var> with <var>d</var> decimal digits, let <var>k</var> be the smallest index such that <br /><var>p<sub><small>k</small>, </sub></var><var>p<sub><small>k+1</small></sub></var>, ...<var>p<sub><small>k+d-1</small></sub></var> are the decimal digits of <var>n</var>, in the same order.<br />
+Also, let <var>g</var>(<var>n</var>) be the expected value of <var>k</var>; it can be proven that <var>g</var>(<var>n</var>) is always finite and, interestingly, always an integer number.</p>
+
+<p>For example, if <var>n</var> = 535, then<br />
+for <var>p</var> = 31415926<b>535</b>897...., we get <var>k</var> = 9<br />
+for <var>p</var> = 35528714365004956000049084876408468<b>535</b>4..., we get <var>k</var> = 36<br />
+etc and we find that <var>g</var>(535) = 1008.</p>
+
+<p>Given that $\sum \limits_{n = 2}^{999} {g \left ( \left \lfloor \dfrac{10^6}{n} \right \rfloor \right )} = 27280188$, find $\sum \limits_{n = 2}^{999999} {g \left ( \left \lfloor \dfrac{10^{16}}{n} \right \rfloor \right )}$.</p>
+
+<u><i>Note</i></u>: $\lfloor x \rfloor$ represents the floor function.
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=316">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_316" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="89a6a8abf6deb3e4ac7a786879b75392axWwygypoGl1nN7DXLuSIpb7EkWLHKjnubez7DCzOe/OySaiYlEPGXh/pz1R5Lsu2FprD7hChvyoEA7qjphqsx9+7Ceg"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

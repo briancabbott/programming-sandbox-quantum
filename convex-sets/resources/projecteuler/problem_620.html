@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#620 Planetary Gears - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:50<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="eacf7c2e82ec5e92d3f2b5342b123194oWV3i+Lk4i1zBQd83r+btHKTj5y8g7hNEY93UfvPc/kXvsO9YHENY6jXnvbZtNGStZ2bpuP3IKUQuze4"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=619" class="tooltip"><span class="tooltiptext_left">Go to problem 619 (Unsolved):<br>&quot;Square subsets&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=621" class="tooltip"><span class="tooltiptext_right">Go to problem 621 (Unsolved):<br>&quot;Expressing an integer as the sum of triangular numbers&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Planetary Gears</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=620"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="996ad7fb71f79e60cef1fdd0d3d1092dYdhAFcWcoEVrhmRdGF+zQUELA6EJ0dStxj7P3v2anABBjzCOPEPo3Zxqv9qf+FCzt95xn6ddS5Zz0lS1lEpVqZ3f"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=620"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=620""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Sunday, 11th February 2018, 01:00 am; Solved by 165;<br>Difficulty rating: 80%</span></div><div id="problem_info"><h3>Problem 620</h3></div>
+<div class="problem_content" role="problem">
+<p>A circle $C$ of circumference $c$ centimetres has a smaller circle $S$ of circumference $s$ centimetres lying off-centre within it. Four other distinct circles, which we call "planets", with circumferences $p$, $p$, $q$, $q$ centimetres respectively ($p&lt;q$), are inscribed within $C$ but outside $S$, with each planet touching both $C$ and $S$ tangentially. The planets are permitted to overlap one another, but the boundaries of $S$ and $C$ must be at least 1cm apart at their closest point.</p>
+
+<p>Now suppose that these circles are actually gears with perfectly meshing teeth at a pitch of 1cm. $C$ is an internal gear with teeth on the inside. We require that $c$, $s$, $p$, $q$ are all integers (as they are the numbers of teeth), and we further stipulate that any gear must have at least 5 teeth.</p>
+
+<p>Note that "perfectly meshing" means that as the gears rotate, the ratio between their angular velocities remains constant, and the teeth of one gear perfectly align with the groves of the other gear and vice versa. Only for certain gear sizes and positions will it be possible for $S$ and $C$ each to mesh perfectly with all the planets. Arrangements where not all gears mesh perfectly are not valid.</p>
+
+<p>Define $g(c,s,p,q)$ to be the number of such gear arrangements for given values of $c$, $s$, $p$, $q$: it turns out that this is finite as only certain discrete arrangements are possible satisfying the above conditions. For example, $g(16,5,5,6)=9$.</p>
+
+<p>Here is one such arrangement:</p>
+<div align="center"><img src="project/images/p620_planetary_gears.png" alt="Example arrangement" /></div>
+
+<p>Let $G(n) = \sum_{s+p+q\le n} g(s+p+q,s,p,q)$ where the sum only includes cases with $p&lt;q$, $p\ge 5$, and $s\ge 5$, all integers. You are given that $G(16)=9$ and $G(20)=205$.</p>
+
+<p>Find $G(500)$.</p>
+
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=620">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_620" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="d8b11fcb35559ce7b2aa5a5e8cc2d2d4Du1986YWUyAnFnyS6rnH0+Gs5voUoe9OLWc5JNq5ZEbtxlErnOCClUeowifHldxbtK+3zs9Inr2atyNkKgsLgckoImgD"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

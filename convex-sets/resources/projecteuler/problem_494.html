@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#494 Collatz prefix families - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:20<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="9a4b31eb0cdb2f73ea6b3b4bf20450adKQdH3cDKXm4zmD0a79EH+huA1tUtoTypIYU1fuxDeqNF3gd4UGUxmy6ZAUElz4dZtMH9f9ClFHxFvXOR"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=493" class="tooltip"><span class="tooltiptext_left">Go to problem 493 (Unsolved):<br>&quot;Under The Rainbow&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=495" class="tooltip"><span class="tooltiptext_right">Go to problem 495 (Unsolved):<br>&quot;Writing n as the product of k distinct positive integers&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Collatz prefix families</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=494"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="ad6a43248bdf73d092b7519186beec68uXdcjpw5Nsho8QnmQzJ36PgGm/46F886ktfaKl2pRJQvEQt4GxR8TaRG7+QanFObgt5Rwlki1MHYWYnVkX3GB+fE"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=494"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=494""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Saturday, 20th December 2014, 07:00 pm; Solved by 206;<br>Difficulty rating: 100%</span></div><div id="problem_info"><h3>Problem 494</h3></div>
+<div class="problem_content" role="problem">
+<p>
+The Collatz sequence is defined as:
+$a_{i+1} = \left\{  \large{\frac {a_i} 2 \atop 3 a_i+1} {\text{if }a_i\text{ is even} \atop \text{if }a_i\text{ is odd}} \right.$.
+</p>
+<p>
+The Collatz conjecture states that starting from any positive integer, the sequence eventually reaches the cycle 1,4,2,1....<br />
+We shall define the sequence prefix <var>p(n)</var> for the Collatz sequence starting with <var>a<sub>1</sub> = n</var> as the sub-sequence of all numbers not a power of 2 (2<sup>0</sup>=1 is considered a power of 2 for this problem). For example:<br /><var>p</var>(13) = {13, 40, 20, 10, 5} <br /><var>p</var>(8) = {}<br />
+Any number invalidating the conjecture would have an infinite length sequence prefix.
+</p>
+<p>
+Let <var>S<sub>m</sub></var> be the set of all sequence prefixes of length <var>m</var>. Two sequences {a<sub>1</sub>, a<sub>2</sub>, ..., a<sub><var>m</var></sub>} and {b<sub>1</sub>, b<sub>2</sub>, ..., b<sub><var>m</var></sub>} in <var>S<sub>m</sub></var> are said to belong to the same prefix family if a<sub>i</sub> &lt; a<sub>j</sub> if and only if b<sub>i</sub> &lt; b<sub>j</sub> for all 1 ≤ i,j ≤<var> m</var>.
+</p>
+<p>
+For example, in <var>S</var><sub>4</sub>, {6, 3, 10, 5} is in the same family as {454, 227, 682, 341}, but not {113, 340, 170, 85}.<br />
+Let <var>f(m)</var> be the number of distinct prefix families in <var>S<sub>m</sub></var>.<br />
+You are given <var>f</var>(5) = 5, <var>f</var>(10) = 55, <var>f</var>(20) = 6771.
+</p>
+<p>
+Find f(90).
+</p>
+
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=494">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_494" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="e2446cc175daffa8356707b1b573b315tatEiQyFu/giUSvPG6b1e5Ox38vI+ePM/IL0piG7/zuflZ7WUOK9aMM4sapfxnnZzn2nSmA5oRijYA2DrAcY5dpUD1gO"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

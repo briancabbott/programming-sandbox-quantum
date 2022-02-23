@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#525 Rolling Ellipse - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:23<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="0eaa2424a11a5ca2fd2245928eb3b511il4bDgVVYJ7G0hzpKasN+4aPNz8ZEH/z8yoahQtKv5IXl51+Qr5rIT1mVQ1bmUbCAvdRT2/74HIN/RB6"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=524" class="tooltip"><span class="tooltiptext_left">Go to problem 524 (Unsolved):<br>&quot;First Sort II&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=526" class="tooltip"><span class="tooltiptext_right">Go to problem 526 (Unsolved):<br>&quot;Largest prime factors of consecutive numbers&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Rolling Ellipse</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=525"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="2835c7e52087c69c2e05e3270bfeadd0yWYOlY85/D/L/Eaj/07Xt8yxzqXzjLUuxyesRllT83lowl1W8E7NSRvuAhL83rmEiykgC0qMnYNFU+JvQ9TEFXTh"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=525"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=525""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Sunday, 13th September 2015, 10:00 am; Solved by 468;<br>Difficulty rating: 45%</span></div><div id="problem_info"><h3>Problem 525</h3></div>
+<div class="problem_content" role="problem">
+<p>An ellipse <var>E</var>(<var>a</var>, <var>b</var>) is given at its initial position by equation:<br />
+$\frac {x^2} {a^2} + \frac {(y - b)^2} {b^2} = 1$</p>
+
+<p>The ellipse rolls without slipping along the <var>x</var> axis for one complete turn. Interestingly, the length of the curve generated by a focus is independent from the size of the minor axis:<br />
+$F(a,b) =  2 \pi \text{ } max(a,b)$</p>
+
+<div align="center"><img src="project/images/p525-rolling-ellipse-1.gif" alt="p525-rolling-ellipse-1.gif" /></div>
+
+<p>This is not true for the curve generated by the ellipse center. Let <var>C</var>(<var>a</var>,<var>b</var>) be the length of the curve generated by the center of the ellipse as it rolls without slipping for one turn.</p>
+
+<div align="center"><img src="project/images/p525-rolling-ellipse-2.gif" alt="p525-rolling-ellipse-2.gif" /></div>
+
+<p>You are given <var>C</var>(2, 4) ~ 21.38816906.</p>
+
+<p>Find <var>C</var>(1, 4) + <var>C</var>(3, 4). Give your answer rounded to 8 digits behind the decimal point in the form <i>ab.cdefghij</i>.</p>
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=525">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_525" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="50b9e229951158521ec9f9de05d08a5dUbv2vQLV6fHQMKFcmmv5b7GJLzsfVZD6vqhRhoVfaUYGyYoMukrKkckzf5P0yL2mXE7OaoWwOQtiHLSCPcTX8I+CG8O9"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#492 Exploding sequence - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:20<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="c7beb86a36ae6fe477a75f5cfeb514c1xhd29PD9ktbXqcq300eMGBobgwx4ltd2aSe/va0/7GB0XVBmGjv3PpRLHNvO9a7gE56xWH3aLq/4HbFr"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=491" class="tooltip"><span class="tooltiptext_left">Go to problem 491 (Unsolved):<br>&quot;Double pandigital number divisible by 11&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=493" class="tooltip"><span class="tooltiptext_right">Go to problem 493 (Unsolved):<br>&quot;Under The Rainbow&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Exploding sequence</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=492"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="a4c3198c412728068036a96062307b97xKudoZozoFsx6oXWl16V52o/Y0/rIMk6sDjBoW9tTQshDye9oSUn+sroYObsRImiOu2wJgMxMBdOeRVrSM632UPl"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=492"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=492""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Saturday, 6th December 2014, 01:00 pm; Solved by 331;<br>Difficulty rating: 60%</span></div><div id="problem_info"><h3>Problem 492</h3></div>
+<div class="problem_content" role="problem">
+<p>Define the sequence a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ... as:</p>
+<ul><li>a<sub>1</sub> = 1</li>
+<li>a<sub><var>n</var>+1</sub> = 6a<sub><var>n</var></sub><sup>2</sup> + 10a<sub><var>n</var></sub> + 3 for <var>n</var> ≥ 1.</li>
+</ul><p>
+Examples:<br />
+a<sub>3</sub> = 2359<br />
+a<sub>6</sub> = 269221280981320216750489044576319<br />
+a<sub>6</sub> mod 1 000 000 007 = 203064689<br />
+a<sub>100</sub> mod 1 000 000 007 = 456482974
+</p>
+
+<p>
+Define B(<var>x</var>,<var>y</var>,<var>n</var>) as ∑ (a<sub><var>n</var></sub> mod <var>p</var>) for every prime <var>p</var> such that <var>x</var> ≤ <var>p</var> ≤ <var>x</var>+<var>y</var>.
+</p>
+
+<p>
+Examples:<br />
+B(10<sup>9</sup>, 10<sup>3</sup>, 10<sup>3</sup>) = 23674718882<br />
+B(10<sup>9</sup>, 10<sup>3</sup>, 10<sup>15</sup>) = 20731563854
+</p>
+
+<p>Find B(10<sup>9</sup>, 10<sup>7</sup>, 10<sup>15</sup>).</p>
+
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=492">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_492" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="4ce61dd210125b655646e5cb9c747ffbK/KJ5G4e0Td+J2qGqAqIHMbCFFZKpS140wZ+o/TiwNTeXUCUqgO7j6Si2MS28kIaJBv//C+g4/IpOrTa/IISs5MWJUxi"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

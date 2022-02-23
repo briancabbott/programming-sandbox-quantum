@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#786 Billiard - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 03:13<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="2ccb6998b2b3bf6746facb144d8cb568f4jt/MFL1PiTeeZKoG1jVrYt5X8Jn3n1pjgw+b/NyXUZ/qdnEuDqmREp4vKv/FNOYBtSnC69/M/N7jsa"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  accesskey="1">Archives</a>
+<a href="recent" title="Recent"  id="current" accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=785" class="tooltip"><span class="tooltiptext_left">Go to problem 785 (Unsolved):<br>&quot;Symmetric Diophantine equation&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem">&nbsp;</div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Billiard</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=786"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="4ecaf08d91a89b1265ab3e30c0ee506bynlociuJ/3se0JtZiq0kuvXBKOgzrmVRlyTZ5owMHa/PzJJrlmFH4Udyxn0JBkUerQe8boh8rYQ9qYRs3yDSkeo7"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=786"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=786""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Sunday, 20th February 2022, 10:00 am; Solved by 37</span></div><div id="problem_info"><h3>Problem 786</h3></div>
+<div class="problem_content" role="problem">
+<p>
+The following diagram shows a billiard table of a special quadrilateral shape.
+The four angles $A, B, C, D$ are $120^\circ, 90^\circ, 60^\circ, 90^\circ$ respectively, and the lengths $AB$ and $AD$ are equal.
+</p>
+
+<div style="text-align:center;">
+<img src="project/images/p786_billiard_shape.jpg" class="dark_img" alt="" height="160" />
+</div>
+
+<p>
+The diagram on the left shows the trace of an infinitesimally small billiard ball, departing from point $A$, bouncing twice on the edges of the table, and finally returning back to point $A$. The diagram on the right shows another such trace, but this time bouncing eight times:
+</p>
+
+<div style="text-align:center;">
+<img src="project/images/p786_billiard_traces.jpg" class="dark_img" alt="" height="160" />
+</div>
+
+<p>
+The table has no friction and all bounces are perfect elastic collisions.<br />
+Note that no bounce should happen on any of the corners, as the behaviour would be unpredictable.
+</p>
+
+<p>
+Let $B(N)$ be the number of possible traces of the ball, departing from point $A$, bouncing at most $N$ times on the edges and returning back to point $A$.
+</p>
+
+<p>
+For example, $B(10) = 6$, $B(100) = 478$, $B(1000) = 45790$.
+</p>
+
+<p>
+Find $B(10^9)$.
+</p>
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=786">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_786" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="fd7b573741ee13de1197e9003c90fd01H0fgRCbiYrD0FDFk0pRkHxl4FfD1/YIJRmaI2aEi+m6fASi60P/EJExh/U2Tz/L6CrTJCgXbgp8JQmPOSjjN/cQYqkpA"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

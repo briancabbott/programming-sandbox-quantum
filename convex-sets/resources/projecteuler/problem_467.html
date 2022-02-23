@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#467 Superinteger - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:17<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="b90d9606aea8438d8ea84c5de8df1666JttsnEQpmB8BoNxxL7eEpbt68/zzfV6AbRLtKlMwl3fVyQEX2PQMezgCklDAm2r3m2LytoLHTiwUj+5j"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=466" class="tooltip"><span class="tooltiptext_left">Go to problem 466 (Unsolved):<br>&quot;Distinct terms in a multiplication table&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=468" class="tooltip"><span class="tooltiptext_right">Go to problem 468 (Unsolved):<br>&quot;Smooth divisors of binomial coefficients&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Superinteger</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=467"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="62b720bb094adb6938fe3461a79ccec3xWty1f9iGF2C7FFjd7pJL7g/1ZB4jiGHFnyejVezL9zv1BAqAeWvihxo5WmB2RvUd+evxO47qPg9S8zmA44YSHmM"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=467"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=467""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Sunday, 13th April 2014, 10:00 am; Solved by 412;<br>Difficulty rating: 50%</span></div><div id="problem_info"><h3>Problem 467</h3></div>
+<div class="problem_content" role="problem">
+<p>An integer <var>s</var> is called a <em>superinteger</em> of another integer <var>n</var> if the digits of <var>n</var> form a <dfn title="A subsequence is a sequence that can be derived from another sequence by deleting some elements without changing the order of the remaining elements.">subsequence</dfn> of the digits of <var>s</var>.<br />
+For example, 2718281828 is a superinteger of 18828, while 314159 is not a superinteger of 151.
+</p>
+
+<p>Let <var>p</var>(<var>n</var>) be the <var>n</var>th prime number, and let <var>c</var>(<var>n</var>) be the <var>n</var>th composite number. For example, <var>p</var>(1) = 2, <var>p</var>(10) = 29, <var>c</var>(1) = 4 and <var>c</var>(10) = 18.<br />
+{<var>p</var>(<var>i</var>) : i ≥ 1} = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...}<br />
+{<var>c</var>(<var>i</var>) : i ≥ 1} = {4, 6, 8, 9, 10, 12, 14, 15, 16, 18, ...}</p>
+
+<p>Let P<sup>D</sup> the sequence of the <strong>digital roots</strong> of {<var>p</var>(<var>i</var>)} (C<sup>D</sup> is defined similarly for {<var>c</var>(<var>i</var>)}):<br />
+P<sup>D</sup> = {2, 3, 5, 7, 2, 4, 8, 1, 5, 2, ...}<br />
+C<sup>D</sup> = {4, 6, 8, 9, 1, 3, 5, 6, 7, 9, ...}</p>
+
+<p>Let P<sub><var>n</var></sub> be the integer formed by concatenating the first <var>n</var> elements of P<sup>D</sup> (C<sub><var>n</var></sub> is defined similarly for C<sup>D</sup>).<br />
+P<sub>10</sub> = 2357248152<br />
+C<sub>10</sub> = 4689135679</p>
+
+<p>Let <var>f</var>(<var>n</var>) be the smallest positive integer that is a common superinteger of P<sub><var>n</var></sub> and C<sub><var>n</var></sub>. <br />For example, <var>f</var>(10) = 2357246891352679, and <var>f</var>(100) mod 1 000 000 007 = 771661825.</p>
+
+<p>Find <var>f</var>(10 000) mod 1 000 000 007.</p>
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=467">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_467" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="aab6161a9900e1f7d5e8257dc694f322zqdUsmzZCUBhsfojmIhpFcuQqr4dI10Aux/gtujWxmXgl9wP2YRNEVpe6G65C8x1TTZps6tvXv0Q2cfOqe5M9JXMspA4"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

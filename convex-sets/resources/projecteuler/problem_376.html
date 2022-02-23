@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#376 Nontransitive sets of dice - Project Euler</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="favicons/site.webmanifest">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="themes/style_main.1643219885.css">
+<link rel="stylesheet" type="text/css" href="themes/style_default.1627113674.css">
+<script src="js/mathjax_config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script></head>
+
+<body>
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/logo_default.png">
+<div id="info_panel">
+Logged in as <strong>briancabbott</strong><br>Wed, 23 Feb 2022, 02:09<br><span class="tooltip"><form class="csrf_form" method="post" action="sign_out"><input type="image" src="images/icons/sign_out.png" class="icon"><input type="hidden" name="csrf_token" value="307d84a75b8515902c68231a852f59bcLinKlvBBrkfWHsEai8stWp5gzN6GXnB54arPDsJFN6qsDfxtwj2XaaxDEdCxOt0JW3sak2Yw+BoIksUG"></form><span class="tooltiptext_narrow">Sign Out</span></span>&nbsp;&nbsp;&nbsp;<a href="search"><img src="images/icons/search_engine.png" alt="Search Problems" title="Search Problems" class="icon"></a>&nbsp;&nbsp;&nbsp;<a href="rss2_euler.xml"><img src="images/icons/news_feed.png" alt="RSS Feed" title="RSS Feed" class="icon"></a>
+</div><!--end_info_panel-->
+</div> <!--end_header-->
+<div id="navigation" class="nav noprint">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+   <a class="hamburger" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div> <!--end_nav-->
+
+<div id="content">
+
+<div id="previous_problem"><a href="problem=375" class="tooltip"><span class="tooltiptext_left">Go to problem 375 (Unsolved):<br>&quot;Minimum of subsequences&quot;</span><img src="images/icons/arrow_left_unsolved.png" alt="Previous" /></a></div><div id="next_problem"><a href="problem=377" class="tooltip"><span class="tooltiptext_right">Go to problem 377 (Unsolved):<br>&quot;Sum of digits - experience #13&quot;</span><img src="images/icons/arrow_right_unsolved.png" alt="Next" /></a></div><br>
+<div class="center print"><img src="images/clipart/print_page_logo.png" alt="projecteuler.net" class="no_border"></div>
+<h2>Nontransitive sets of dice</h2><div id="problem_icons" class="noprint"><span class="tooltip"><form class="csrf_form" method="post" action="toggle_pin=376"><input type="image" src="images/icons/pin_unpinned.png" class="icon"><input type="hidden" name="csrf_token" value="0f3e5ca5b332043c69f83ff611bfe0268HvgKmMj3cU9T4zKKGZSb5l55lx4DcG8krcHi9RKyWWTA9y7xQJC7OHnYBaTVAA+BvKrluNUOFZpBjd1FtXk5T4v"></form><span class="tooltiptext_right"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/25 pins used.</div></span></span>&nbsp;<a href="minimal=376"><img src="images/icons/file_html.png" title="Show HTML problem content" class="icon"></a>&nbsp;<a href="fastest=376""><img src="images/icons/best.png" title="Show fastest solvers" class="icon"></a>&nbsp;<span class="tooltip"><img src="images/icons/info.png" class="icon"><span class="tooltiptext_right">Published on Sunday, 18th March 2012, 01:00 am; Solved by 264;<br>Difficulty rating: 70%</span></div><div id="problem_info"><h3>Problem 376</h3></div>
+<div class="problem_content" role="problem">
+<p>
+Consider the following set of dice with nonstandard pips:
+</p>
+
+<p>
+Die A: 1 4 4 4 4 4<br />
+Die B: 2 2 2 5 5 5<br />
+Die C: 3 3 3 3 3 6<br /></p>
+
+<p>
+A game is played by two players picking a die in turn and rolling it. The player who rolls the highest value wins.
+</p>
+
+<p>
+If the first player picks die A and the second player picks die B we get<br />
+P(second player wins) = <sup>7</sup>/<sub>12</sub> &gt; <sup>1</sup>/<sub>2</sub></p>
+
+<p>
+If the first player picks die B and the second player picks die C we get<br />
+P(second player wins) = <sup>7</sup>/<sub>12</sub> &gt; <sup>1</sup>/<sub>2</sub></p>
+
+<p>
+If the first player picks die C and the second player picks die A we get<br />
+P(second player wins) = <sup>25</sup>/<sub>36</sub> &gt; <sup>1</sup>/<sub>2</sub></p>
+
+<p>
+So whatever die the first player picks, the second player can pick another die and have a larger than 50% chance of winning.<br />
+A set of dice having this property is called a <b>nontransitive set of dice</b>.
+</p>
+
+<p>
+We wish to investigate how many sets of nontransitive dice exist. We will assume the following conditions:</p><ul><li>There are three six-sided dice with each side having between 1 and <var>N</var> pips, inclusive.</li>
+<li>Dice with the same set of pips are equal, regardless of which side on the die the pips are located.</li>
+<li>The same pip value may appear on multiple dice; if both players roll the same value neither player wins.</li>
+<li>The sets of dice {A,B,C}, {B,C,A} and {C,A,B} are the same set.</li>
+</ul><p>
+For <var>N</var> = 7 we find there are 9780 such sets.<br />
+How many are there for <var>N</var> = 30 ?
+</p>
+</div><br>
+<div id="problem_answer" class="noprint">
+<form name="form" method="post" action="problem=376">
+<div class="data_entry">
+
+<div class="row"><div class="cell right w200">Answer:&nbsp;&nbsp;</div><div class="cell"><input size="20" type="text" name="guess_376" id="guess" maxlength="30" autofocus></div><input type="hidden" name="csrf_token" value="bfb4567f8a886d00f318cb91e307b8f4mMNrDwz/XLtEfOBrfEOL0iblh+yMQXhr/BGfPD5r/FZUvdwlFKZYrIpp+CWww0ahTtJ1WDo7icpTwKliEo+nxvWLTXjv"></div>   <div class="row">
+   <input type="submit" value="Check" />
+   </div>
+   </div> <!--end_data_entry-->
+</form>
+</div> <!--end_problem_answer-->
+</div> <!--end_content-->
+</div> <!--end_container-->
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+</div> <!--end_footer-->
+<div id="modal_window">
+   <div id="modal_content" class="message_body">
+   <p>The page has been left unattended for too long and that link/button is no longer active. Please refresh the page.</p>
+   </div>
+</div> <!--end_modal_window-->
+<script src="js/general.1618854480.js"></script>
+
+</body>
+</html>

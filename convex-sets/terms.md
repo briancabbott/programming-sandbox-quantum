@@ -42,6 +42,10 @@ self-dual (property of facial-laticce within a simplex space)
 
 Boolean Lattice
 
+Support hyperplane
+regular point
+regular support hyperplane
+
 
 
 
